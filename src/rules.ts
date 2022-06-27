@@ -12,6 +12,8 @@ export const closeDoubleQuote = new InputRule(/"$/, "”")
 export const openSingleQuote = new InputRule(/(?:^|[\s\{\[\(\<'"\u2018\u201C])(')$/, "‘")
 /// “Smart” closing single quotes.
 export const closeSingleQuote = new InputRule(/'$/, "’")
+/// Add `&nbsp;` if the spacebar is pressed twice.
+export const doubleSpace = new InputRule(/  $/, " \u00a0") 
 
 /// Smart-quote related input rules.
 export const smartQuotes: readonly InputRule[] = [openDoubleQuote, closeDoubleQuote, openSingleQuote, closeSingleQuote]
